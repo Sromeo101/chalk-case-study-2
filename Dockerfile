@@ -25,5 +25,6 @@ COPY --from=builder /app/lib ./lib
 COPY --from=builder /app/data ./data
 
 USER node
+RUN chown -R node:node /app/data
 EXPOSE 3000
 CMD ["node", "server.js"]
